@@ -7,3 +7,4 @@ export const store = configureStore({
   },
 });
 export * from './thunks/fetchUsers'; //merkezden dışara aktarmak için kullanıyoruz.
+export * from './thunks/addUser';
