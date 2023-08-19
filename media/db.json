@@ -59,6 +59,21 @@
       "userId": 3,
       "title": "Licensed Rubber Chicken",
       "id": 11
+    },
+    {
+      "userId": 3,
+      "title": "Bespoke Cotton Ball",
+      "id": 12
+    },
+    {
+      "userId": 3,
+      "title": "Gorgeous Metal Chair",
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "title": "Ergonomic Concrete Cheese",
+      "id": 14
     }
   ],
   "photos": []
