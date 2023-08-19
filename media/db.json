@@ -49,6 +49,12 @@
       "id": 14
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id":10,
+      "title":"Test",
+      "userId":3
+    }
+  ],
   "photos": []
 }
