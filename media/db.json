@@ -55,11 +55,6 @@
   ],
   "albums": [
     {
-      "id": 10,
-      "title": "Test",
-      "userId": 3
-    },
-    {
       "userId": 3,
       "title": "Licensed Rubber Chicken",
       "id": 11
