@@ -11,50 +11,6 @@
     {
       "name": "Gustavo Muller",
       "id": 5
-    },
-    {
-      "name": "Geraldine Hilll",
-      "id": 6
-    },
-    {
-      "name": "Delbert Runte",
-      "id": 7
-    },
-    {
-      "name": "Bryant Satterfield",
-      "id": 8
-    },
-    {
-      "name": "Elena Hoeger",
-      "id": 9
-    },
-    {
-      "name": "Gregg Zboncak",
-      "id": 10
-    },
-    {
-      "name": "Jay Trantow",
-      "id": 11
-    },
-    {
-      "name": "Alfonso Reilly",
-      "id": 12
-    },
-    {
-      "name": "Brad Lesch",
-      "id": 13
-    },
-    {
-      "name": "Dr. Danielle Considine",
-      "id": 14
-    },
-    {
-      "name": "Irving O'Connell",
-      "id": 15
-    },
-    {
-      "name": "Edwin Zemlak",
-      "id": 16
     }
   ],
   "albums": [
@@ -72,16 +28,6 @@
       "userId": 3,
       "title": "Gorgeous Metal Chair",
       "id": 13
-    },
-    {
-      "userId": 8,
-      "title": "Refined Soft Bacon",
-      "id": 15
-    },
-    {
-      "userId": 6,
-      "title": "Modern Concrete Keyboard",
-      "id": 16
     }
   ],
   "photos": [
@@ -89,6 +35,11 @@
       "albumId": 11,
       "url": "https://loremflickr.com/150/150/abstract?lock=8086717726720000",
       "id": 1
+    },
+    {
+      "albumId": 11,
+      "url": "https://loremflickr.com/150/150/abstract?lock=8829119141773312",
+      "id": 2
     }
   ]
 }
