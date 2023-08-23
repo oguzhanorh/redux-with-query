@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React,{ useEffect,useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers, addUser } from '../store';
@@ -7,6 +7,7 @@ import Button from './Button';
 import { th } from '@faker-js/faker';
 import { useThunk } from '../hooks/use-thunk';
 import UsersListItem from './UsersListItem';
+import Modal from './Modal';
 
 function UserList() {
   // const [isLoadingUsers, setIsLoadingUsers] = useState(false);
@@ -20,6 +21,18 @@ function UserList() {
   const { isLoading, data, error } = useSelector((state) => {
     return state.users;
   });
+  const [showModal,setShowModal]=useState(false);
+  const [inputValue,setInputValue]=useState('');
+
+  const handleModalOpen=()=>{
+    setShowModal(true);
+  }
+  const handleModalClose = ()=>{
+    setShowModal(false);
+  }
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
   useEffect(() => {
     // setIsLoadingUsers(true);
@@ -45,7 +58,8 @@ function UserList() {
     //   })
     //   .finally(() => setIsCreatingUser(false));
 
-    doCreateUser();
+    doCreateUser(inputValue);
+    setShowModal(false);
   };
 
   // if (isLoading) {
@@ -74,10 +88,15 @@ function UserList() {
       <div className="flex flex-row justify-between m-3 items-center">
         <h1 className="m-2 text-xl">Users</h1>
        
-          <Button loading={isCreatingUser} onClick={handleUserAdd} success>
+          {/* <Button loading={isCreatingUser} onClick={handleUserAdd} success>
             + Add User
+          </Button> */}
+
+          <Button success onClick={handleModalOpen}>
+            Add User
           </Button>
-      
+          <Modal open={showModal} title="Add user.." onClose={handleModalClose} inputValue={inputValue} handleInputChange={handleInputChange} handleSave={handleUserAdd}/>
+
         {creatingUserError && 'Error creating user...'}
       </div>
       {content}
