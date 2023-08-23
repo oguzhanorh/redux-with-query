@@ -9,6 +9,12 @@ const usersSlice = createSlice({
     data: [],
     isLoading: false,
     error: null,
+    searchTerm:'',
+  },
+  reducers:{
+    changeSearchTerm(state,action){
+      state.searchTerm = action.payload;
+    }
   },
   extraReducers(builder) {
     //bekleyen
@@ -52,5 +58,5 @@ const usersSlice = createSlice({
     });
   },
 });
-
+export const {changeSearchTerm} = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;

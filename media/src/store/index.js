@@ -3,6 +3,7 @@ import { usersReducer } from './slices/usersSlice';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { albumsApi } from './apis/albumsApi';
 import { photosApi } from './apis/photosApi';
+import { changeSearchTerm } from './slices/usersSlice';
 
 export const store = configureStore({
   reducer: {
@@ -36,3 +37,4 @@ export {
   useAddPhotoMutation,
   useRemovePhotoMutation,
 } from './apis/photosApi';
+export {changeSearchTerm};

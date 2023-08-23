@@ -8,6 +8,8 @@ import { th } from '@faker-js/faker';
 import { useThunk } from '../hooks/use-thunk';
 import UsersListItem from './UsersListItem';
 import Modal from './Modal';
+import UserSearch from './UserSearch';
+import { changeSearchTerm } from '../store';
 
 function UserList() {
   // const [isLoadingUsers, setIsLoadingUsers] = useState(false);
@@ -23,6 +25,8 @@ function UserList() {
   });
   const [showModal,setShowModal]=useState(false);
   const [inputValue,setInputValue]=useState('');
+  const [filteredUsers, setFilteredUsers] = useState([]); 
+  const [searchTerm,setSearchTerm]=useState('');
 
   const handleModalOpen=()=>{
     setShowModal(true);
@@ -33,6 +37,15 @@ function UserList() {
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
+  const handleSearchUsers = (searchValue) => {
+    const filtered = data.filter((user) =>
+      user.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredUsers(filtered);
+    setSearchTerm(searchValue)
+  };
+
+ 
 
   useEffect(() => {
     // setIsLoadingUsers(true);
@@ -48,6 +61,14 @@ function UserList() {
 
     doFetchUsers();
   }, [doFetchUsers]);
+
+  useEffect(() => {
+    // Kullanıcıları filtrelemek için
+    const filtered = data.filter((user) =>
+      user.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredUsers(filtered);
+  }, [searchTerm, data]);
 
   const handleUserAdd = () => {
     // setIsCreatingUser(true);
@@ -77,7 +98,7 @@ function UserList() {
   {
     content = <div>Error fetching data...</div>;
   }else {
-      content = data.map((user) => {
+      content = filteredUsers.map((user) => {
         return <UsersListItem key={user.id} user={user}/>
       });
   }
@@ -85,6 +106,8 @@ function UserList() {
 
   return (
     <div>
+   <UserSearch userSearchTerm={searchTerm} onSearchChange={handleSearchUsers} />
+
       <div className="flex flex-row justify-between m-3 items-center">
         <h1 className="m-2 text-xl">Users</h1>
        

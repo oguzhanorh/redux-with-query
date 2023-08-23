@@ -19,6 +19,18 @@
     {
       "name": "oguzhan2",
       "id": 7
+    },
+    {
+      "name": "test",
+      "id": 8
+    },
+    {
+      "name": "test2",
+      "id": 9
+    },
+    {
+      "name": "melike",
+      "id": 10
     }
   ],
   "albums": [
@@ -46,6 +58,11 @@
       "userId": 3,
       "title": "Oriental Plastic Shirt",
       "id": 15
+    },
+    {
+      "userId": 10,
+      "title": "Recycled Wooden Chair",
+      "id": 16
     }
   ],
   "photos": [
