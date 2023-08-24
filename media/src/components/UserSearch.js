@@ -1,6 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { changeSearchTerm } from "../store";
+import IconButton from '@mui/material/IconButton';
+import FilledInput from '@mui/material/FilledInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import SearchIcon from '@mui/icons-material/Search';
 
 function UserSearch({ userSearchTerm,onSearchChange }) {
   const dispatch = useDispatch();
@@ -14,12 +20,26 @@ function UserSearch({ userSearchTerm,onSearchChange }) {
   return (
     <div className="list-header">
       <div className="search field is-horizontal">
-        <label className="label">Search</label>
-        <input
-          className="input"
-          value={userSearchTerm}
-          onChange={handleSearch}
-        />
+        
+       
+        <FormControl sx={{ m: 1, width: '25ch', }} variant="filled">
+          <InputLabel htmlFor="filled-adornment-search">Search</InputLabel>
+          <FilledInput
+            id="filled-adornment-search"
+            onChange={handleSearch}
+            value={userSearchTerm}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="search"
+                  edge="end"
+                >
+                  <SearchIcon/>
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
       </div>
     </div>
   );
