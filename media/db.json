@@ -31,6 +31,10 @@
     {
       "name": "melike",
       "id": 10
+    },
+    {
+      "name": "test",
+      "id": 11
     }
   ],
   "albums": [
@@ -63,6 +67,11 @@
       "userId": 10,
       "title": "Recycled Wooden Chair",
       "id": 16
+    },
+    {
+      "userId": 3,
+      "title": "Tasty Wooden Soap",
+      "id": 17
     }
   ],
   "photos": [
